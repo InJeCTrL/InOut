@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html style="font-size: 110.4px;" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+		<title>请假外出、返校权限查询通行码</title>
+		<style>
+			.frame_load_img {
+				display: inline-block;
+				width: 50px;
+				animation: haha1 1.5s linear infinite;
+				-webkit-animation: haha1 1s linear infinite;
+			}
+
+			.frame-loader {
+				position: fixed;
+				z-index: 999;
+				top: 50%;
+				left: 50%;
+				transform: translate3d(-50%, -50%, 0);
+			}
+
+			@-webkit-keyframes haha1 {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+
+				25% {
+					-webkit-transform: rotate(90deg);
+				}
+
+				50% {
+					-webkit-transform: rotate(180deg);
+				}
+
+				75% {
+					-webkit-transform: rotate(270deg);
+				}
+
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}
+
+			#__vconsole .vc-content {
+				line-height: 12px;
+			}
+		</style>
+		<link href="css/app.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/chunk-5bf5719a.css">
+	</head>
+	<body class="">
+		<div id="wxform">
+			<div class="top">
+				<div class="W_onetop" style="width: 50%;">
+					申请表单
+					<p style="display: none;">1</p>
+				</div>
+				<!----> <span class="line" style="width: 45%; left: 5.888px;"></span>
+			</div>
+			<div class="forms">
+				<div style="height: 0px;"></div>
+				<div class="toptabla">
+					<div class="toptabla_con">
+						<div class="formsTop_left">
+							<img src="data:image/png;base64,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"
+							 alt="">
+							<p class="">请假外出、返校权限查询</p>
+						</div>
+						<!---->
+					</div>
+				</div>
+				<div>
+					<div class="m_formList">
+						<!---->
+						<div>
+							<div class="pluginnames"><span style="color: rgb(135, 135, 135); font-size: 14px; font-family: 微软雅黑; line-height: 22px;">
+									姓名
+								</span>
+								<!---->
+							</div>
+							<!---->
+							<div class="plugin-allbox dplugin-mobile-rinput">
+								<div data-key="User_3" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; text-align: center;">
+									<div class="dplugin-mobile dplugin-doneplugin dplugin-mobile-dinput"><span id="name" class="doneplugin-value doneplugin-value-userview"
+										 style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: center; line-height: 15px; letter-spacing: 0px;">
+											
+										</span></div>
+								</div>
+								<!---->
+							</div>
+						</div>
+						<!---->
+						<div>
+							<div class="pluginnames"><span style="color: rgb(135, 135, 135); font-size: 14px; font-family: 微软雅黑; line-height: 22px;">
+									学院
+								</span>
+								<!---->
+							</div>
+							<!---->
+							<div class="plugin-allbox dplugin-mobile-rinput">
+								<div data-key="User_22" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; text-align: center;">
+									<div class="dplugin-mobile dplugin-doneplugin dplugin-mobile-dinput"><span id="depart" class="doneplugin-value doneplugin-value-userview"
+										 style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: center; line-height: 15px; letter-spacing: 0px;">
+											
+										</span></div>
+								</div>
+								<!---->
+							</div>
+						</div>
+						<!---->
+						<div>
+							<div class="pluginnames"><span style="color: rgb(135, 135, 135); font-size: 14px; font-family: 微软雅黑; line-height: 22px;">
+									状态码
+								</span>
+								<!---->
+							</div>
+							<!---->
+							<div class="plugin-allbox" plugin="[object Object]">
+								<div data-key="Qrcode_11" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; width: 100%; text-align: center; height: 100%; overflow-x: auto;">
+									<div class="dplugin-mobile"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAESUlEQVR4nO2aQZLcMAwD5/9fyuOyl1wZerAEBdvdVTxNSSLg3ksqn78ABj6nF4BnglhgAbHAAmKBBcQCC4gFFv4r1ufP55aj5JHKW9oteco808UljJJHAbEQq82jgFiI1eZRQCzEavMoIBZitXkUEAux2jwKiGUQ6zRbH0/d4bT0kyAWYllALMSygFiIZQGxEMsCYiGWhQixlLKTP0TyO8ldI1ZD8jvJXSNWQ/I7yV0jVkPyO8ldI1ZD8jvJXSNWQ/I7yV0jVkPyO8ldv0qsyfen73tc12pxtwyLWIiV8iHUflLzIFbIh1D7Sc2DWCEfQu0nNQ9ihXwItZ/UPIhlCKuQ/E5y14jVkPxOcteI1ZD8TnLXiNWQ/E5y14jVkPxOcteI1ZD8TnLXiNWQ/E5y1+NibTG92+SHSMhzejfEunAfYiEWYhlALMSygFiIZQGxEMvCqljJM1pQwJnkKfOUvzwx7E3PJE+Zp/zliWFveiZ5yjzlL08Me9MzyVPmKX95YtibnkmeMk/5yxPD3vRM8pR5yl+eGPamZ5KnzFP+8kC2JAHEQiwTr2oHsfZ4VTuItcer2kGsPV7VDmLtEfF/3tUdJt85zfTeW12Xd02HRSwNxEIsC4iFWBYQC7EsIBZiWUAsxLKAWA+VZOOjbkqytVv5jroEYn1/F2JdWAKxvr8LsS4sgVjf34VYF5ZArO/vQqwLSyDW93ch1oUlToe968c7PVsgVnPfdJ7TswViNfdN5zk9WyBWc990ntOzBWI1903nOT1bIFZz33Se07MFYjX3Tec5PVu86t+xtj5S9Adf2gGxEAuxEOv3IBZiWUAsxLKAWIhlIV4s5cyWJFu7bZ2ZzDPdW3lGXXwyrELCboiFWJbdEAuxLLshFmJZdkMsxLLshliIZdkNsUSxnsbWh1B2mGYrT/n+6G3hIBZiWUAsxLKAWIhlAbEQywJihYg1/SG2Rsmzxek8a2emS0iYyYKmOZ0HsRArRxLEQqyYM9MlJMxkQdOczoNYiJUjCWIhVswZtYTTTBeUPJN51rqevnALxEIsC4iFWBYQC7EsIBZiWUCsl4mVUKrCxs7T72/lQSzEsuRBLMSy5EEsxLLkQSzEsuRBLMSy5EEsxLLkQSzDbtNsyaicGd0tYXHEQizE+iWItbg4YiEWYv0SxFpcHLEQ67FiTeZROlXObHWggFiIhVjO3SbzKJ0qZxALsdr7lDOIhVjtfcoZxEKs9j7lDGIhVnufcuZVYm0xvdv0H8TpP8jTMiLWhftOf7zk3cozatmnQayM3cozatmnQayM3cozatmnQayM3cozatmnQayM3cozCWUnFzTdz+Q7CbuV708vlzBKHqk8xKrfn14uYZQ8UnmIVb8/vVzCKHmk8hCrfn96uYRR8kjlIVb9/vRyCaPkkcpDrPr96eUSRskjlYdY9fujtwH8A7HAAmKBBcQCC4gFFhALLPwAW8iCb29DJkYAAAAASUVORK5CYII=" height="150px" width="150px"></div>
+								</div>
+								<!---->
+							</div>
+						</div>
+						<div>
+							<div class="pluginnames"><span style="color: rgb(135, 135, 135); font-size: 18px; font-family: 微软雅黑; line-height: 22px;">
+									状态
+								</span>
+								<!---->
+							</div>
+							<!---->
+							<div class="plugin-allbox dplugin-mobile-rinput">
+								<div data-key="Input_12" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; text-align: center;">
+									<div class="dplugin-mobile dplugin-mobile-dinput dinput-vie dplugin-mobile-dinput-focusalert" style="font-size: 18px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: green; text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;"><span id="status"
+										 style="font-size: 18px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: green; text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;">允许入校</span></div>
+								</div>
+								<!---->
+							</div>
+						</div>
+						<div>
+							<div class="pluginnames"><span style="color: rgb(135, 135, 135); font-size: 14px; font-family: 微软雅黑; line-height: 22px;">
+									学工号
+								</span>
+								<!---->
+							</div>
+							<!---->
+							<div class="plugin-allbox dplugin-mobile-rinput">
+								<div data-key="User_5" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; text-align: center;">
+									<div class="dplugin-mobile dplugin-doneplugin dplugin-mobile-dinput"><span id="number" class="doneplugin-value doneplugin-value-userview"
+										 style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: center; line-height: 15px; letter-spacing: 0px;">
+											
+										</span></div>
+								</div>
+								<!---->
+							</div>
+						</div>
+						<!---->
+						<div>
+							<div class="pluginnames"><span style="color: rgb(135, 135, 135); font-size: 14px; font-family: 微软雅黑; line-height: 22px;">
+									出入校时间
+								</span>
+								<!---->
+							</div>
+							<!---->
+							<div class="plugin-allbox">
+								<div data-key="Calendar_15" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; text-align: center;">
+									<div class="dplugin-mobile dplugin-mobile-dCalendar dCalendar-vie" style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;">
+										<span id="time" style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;"></span></div>
+								</div>
+								<!---->
+							</div>
+						</div>
+						<!---->
+						<div style="display: none;">
+							<ul>
+								<!---->
+								<!---->
+								<!---->
+								<!---->
+								<!---->
+								<!---->
+								<!---->
+								<!---->
+								<!---->
+								<!---->
+								<!---->
+								<!---->
+								<li><span>动态转化：</span>
+									<div data-key="Conversion_17" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; text-align: left;">
+										<!---->
+									</div>
+								</li>
+								<!---->
+								<!---->
+								<li><span>数据源：</span>
+									<div data-key="DataSource_23" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; text-align: left;"
+									 plugin="[object Object]">
+										<div>
+											<div class="el-dialog__wrapper" style="display: none;">
+												<div role="dialog" aria-modal="true" aria-label="同步数据" class="el-dialog el-dialog--center rTbaleDialog"
+												 style="margin-top: 15vh; width: 90%;">
+													<div class="el-dialog__header"><span class="el-dialog__title">同步数据</span>
+														<!---->
+													</div>
+													<!---->
+													<div class="el-dialog__footer"><span class="dialog-footer"><button type="button" class="el-button el-button--default">
+																<!---->
+																<!----><span>取 消</span></button> <button type="button" class="el-button el-button--primary">
+																<!---->
+																<!----><span>确 定</span></button></span></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!---->
+					</div>
+					<!---->
+				</div>
+				<div class="wxformbtn m_start_btn"><button class="draftdiv active">更多</button>
+					<div class="wxformbtn_center">
+						<!---->
+					</div>
+					<!---->
+				</div>
+			</div>
+			<!---->
+			<!---->
+			<!---->
+			<!---->
+			<!---->
+			<!---->
+			<!---->
+			<!---->
+			<div class="el-dialog__wrapper" style="display: none;">
+				<div role="dialog" aria-modal="true" aria-label="添加人员" class="el-dialog el-dialog--center dialog_search_user" style="margin-top: 15vh; width: 300px;">
+					<div class="el-dialog__header"><span class="el-dialog__title">添加人员</span><button type="button" aria-label="Close"
+						 class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
+					<!---->
+					<div class="el-dialog__footer"><span class="dialog-footer"><button type="button" class="el-button el-button--default">
+								<!---->
+								<!----><span>取 消</span></button> <button type="button" class="el-button el-button--primary">
+								<!---->
+								<!----><span>确 定</span></button></span></div>
+				</div>
+			</div>
+			<div class="el-dialog__wrapper" style="display: none;">
+				<div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center dialog_agent_depart"
+				 style="margin-top: 15vh; width: 300px;">
+					<div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close"
+						 class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
+					<!---->
+					<div class="el-dialog__footer"><span class="dialog-footer"><button type="button" class="el-button el-button--default">
+								<!---->
+								<!----><span>取 消</span></button> <button type="button" class="el-button el-button--primary">
+								<!---->
+								<!----><span>确 定</span></button></span></div>
+				</div>
+			</div>
+			<!---->
+			<div class="el-dialog__wrapper" style="display: none;">
+				<div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh; width: 80%;">
+					<div class="el-dialog__header"><span class="el-dialog__title"></span>
+						<!---->
+					</div>
+					<!---->
+					<!---->
+				</div>
+			</div>
+			<div>
+				<div class="el-dialog__wrapper" style="display: none;">
+					<div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog submit_layer" style="margin-top: 15vh;">
+						<div class="el-dialog__header"><span class="el-dialog__title"></span>
+							<!---->
+						</div>
+						<!---->
+						<!---->
+					</div>
+				</div>
+			</div>
+		</div><iframe id="printCasLogout" style="display: none;"></iframe>
+		<div class="el-loading-mask is-fullscreen" style="z-index: 2000; display: none;">
+			<div class="el-loading-spinner"><svg viewBox="25 25 50 50" class="circular">
+					<circle cx="50" cy="50" r="20" fill="none" class="path"></circle>
+				</svg>
+				<!---->
+			</div>
+		</div>
+		<script>
+			var str_param = window.location.search.substr(1);
+			if (str_param != ""){
+				var params = str_param.split("&");
+				if (params.length == 4){
+					document.getElementById("name").textContent = decodeURIComponent(params[0].substring(params[0].indexOf("=") + 1));
+					document.getElementById("depart").textContent = decodeURIComponent(params[1].substring(params[1].indexOf("=") + 1));
+					document.getElementById("number").textContent = decodeURIComponent(params[2].substring(params[2].indexOf("=") + 1));
+					var decoded = decodeURIComponent(params[3]);
+					document.getElementById("status").textContent = "允许" + decoded.substring(decoded.indexOf("=") + 1, decoded.indexOf("?") != -1 ? decoded.indexOf("?") : decoded.length);
+					var date = new Date();
+					document.getElementById("time").textContent = date.getFullYear() + "-" + (date.getMonth() + 1).toString().padStart(2, "0") + "-" + date.getDate().toString().padStart(2, "0") + " " + 
+					date.getHours().toString().padStart(2, "0") + ":" + date.getMinutes().toString().padStart(2, "0") + ":" + date.getSeconds().toString().padStart(2, "0");
+				}
+			}
+		</script>
+	</body>
+</html>
