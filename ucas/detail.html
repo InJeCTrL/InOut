@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html style="font-size: 96px;" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <title>我的签批</title>
+    <style>
+        .frame_load_img {
+            display: inline-block;
+            width: 50px;
+            animation: haha1 1.5s linear infinite;
+            -webkit-animation: haha1 1s linear infinite;
+        }
+
+        .frame-loader {
+            position: fixed;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        @-webkit-keyframes haha1 {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            25% {
+                -webkit-transform: rotate(90deg);
+            }
+
+            50% {
+                -webkit-transform: rotate(180deg);
+            }
+
+            75% {
+                -webkit-transform: rotate(270deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        #__vconsole .vc-content {
+            line-height: 12px;
+        }
+    </style>
+    <script src="./jweixin-1.js"></script>
+    <script src="./jquery3.js"></script>
+    <script src="./vue2.js"></script>
+    <script src="./element-ui2.js"></script>
+    <link rel="stylesheet" href="./element-ui2.css">
+    <meta name="sourceV" content="1628783173401">
+    <meta name="envWebId" content="ucas">
+    <link href="./app.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./3474.jpg">
+    <link rel="stylesheet" type="text/css" href="./chunk-409ab0db.css">
+    <link rel="stylesheet" type="text/css" href="./chunk-405291d0.css">
+    <script charset="utf-8" src="./chunk-405291d0.js"></script>
+</head>
+
+<body class="site_mobile_common">
+    <div id="wxform">
+        <div id="showExamine">
+            <!---->
+            <div class="forms">
+                <div style="height: 0px;">
+                </div>
+                <div class="toptabla">
+                    <div class="toptabla_con">
+                        <div class="formsTop_left">
+                            <i class="iconfont icon-biaodanyemian">
+                            </i>
+                            <p class="">行程管理</p>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <div>
+                    <div element-loading-custom-class="area-vloading" class="m_formList">
+                        <div class="">
+                            <div class="pluginnames">
+                                <span style="color: rgb(135, 135, 135); font-size: 14px; font-family: 微软雅黑; line-height: 22px;">学生姓名</span>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="plugin-allbox">
+                                <div data-key="User_50" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; text-align: left;">
+                                    <div class="dplugin-mobile dplugin-doneplugin dplugin-mobile-dinput">
+                                        <span class="doneplugin-value doneplugin-value-userview" style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: left; line-height: 20px; letter-spacing: 0px;">姓名</span>
+                                    </div>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="pluginnames">
+                                <span style="color: rgb(135, 135, 135); font-size: 14px; font-family: 微软雅黑; line-height: 22px;">学号</span>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="plugin-allbox">
+                                <div data-key="User_49" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; text-align: left;">
+                                    <div class="dplugin-mobile dplugin-doneplugin dplugin-mobile-dinput">
+                                        <span class="doneplugin-value doneplugin-value-userview" style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: left; line-height: 20px; letter-spacing: 0px;">202000000000000</span>
+                                    </div>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="pluginnames">
+                                <span style="color: rgb(135, 135, 135); font-size: 14px; font-family: 微软雅黑; line-height: 22px;">出校时间</span>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="plugin-allbox">
+                                <div data-key="Calendar_37" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; text-align: left;">
+                                    <div class="dplugin-mobile dplugin-mobile-dCalendar dCalendar-vie" style="font-size: 19px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: left; line-height: 20px; letter-spacing: 0px;">
+                                        <span style="font-size: 19px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: left; line-height: 20px; letter-spacing: 0px;">2021-08-15 00:00</span>
+                                    </div>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="pluginnames">
+                                <span style="color: rgb(135, 135, 135); font-size: 14px; font-family: 微软雅黑; line-height: 22px;">通行码</span>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="plugin-allbox" plugin="[object Object]">
+                                <div data-key="Qrcode_27" class="dplugin-box" style="margin-top: 0px; margin-bottom: 0px; width: 100%; text-align: center; height: 100%; overflow-x: auto;">
+                                    <div class="dplugin-mobile">
+                                        <img src="data:image/png;base64,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" />
+                                    </div>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                    <!---->
+                </div>
+                <!---->
+                <!---->
+                <!---->
+            </div>
+
+        </div>
+        <!---->
+        <!---->
+        <div id="showVerify">
+            <!---->
+        </div>
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <div class="el-dialog__wrapper" style="display: none;">
+            <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh; width: 80%;">
+                <div class="el-dialog__header">
+                    <span class="el-dialog__title">
+                    </span>
+                    <!---->
+                </div>
+                <!---->
+                <!---->
+            </div>
+        </div>
+        <!---->
+        <!---->
+    </div>
+</body>
+</html>
