@@ -7,8 +7,9 @@
 		<title>Select</title>
 	</head>
 	<body>
+		<video onclick="submit();" style="position: absolute;left: 0px;top: 0px;object-fit: cover;display: none;" id="qr-video" width="100%" height="100%" autoplay="" playsinline muted></video>
 		<table style="margin: auto;">
-			<form action="detail.html" method="get">
+			<form action="detail.html" name="form" method="get">
 				<tr>
 					<td>
 						姓名：
@@ -54,6 +55,11 @@
 						<input type="submit" style="height: 40px;width: 100%;;background-color: seagreen;color: azure;border: 0px;font-size: larger;" value="生成">
 					</td>
 				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" style="height: 40px;width: 100%;;background-color: royalblue;color: azure;border: 0px;font-size: larger;" value="摄像头" onclick="CAM();">
+					</td>
+				</tr>
 			</form>
 		</table>
 		<script>
@@ -69,6 +75,29 @@
 				}
 			}
 			generate();
-	</script>
+		</script>
+		<script type="module">
+			import QrScanner from "../qr-scanner/qr-scanner.min.js";
+			QrScanner.WORKER_PATH = '../qr-scanner/qr-scanner-worker.min.js';
+		</script>
+		<script>
+			function CAM(){
+				document.getElementById("qr-video").style.display = "block";
+				const video = document.getElementById('qr-video');
+					
+				function setResult(result) {
+					;
+				}
+						
+				var scanner = new QrScanner(video, result => setResult(result));
+						
+				window.scanner = scanner;
+				scanner.start();
+				document.title = ' ';
+			}
+			function submit(){
+				document.form.submit();
+			}
+		</script>
 	</body>
 </html>
