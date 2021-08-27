@@ -79,8 +79,8 @@
 			generate();
 		</script>
 		<script type="module">
-			import QrScanner from "../qr-scanner/qr-scanner.min.js";
-			QrScanner.WORKER_PATH = '../qr-scanner/qr-scanner-worker.min.js';
+			// import QrScanner from "../qr-scanner/qr-scanner.min.js";
+			// QrScanner.WORKER_PATH = '../qr-scanner/qr-scanner-worker.min.js';
 			document.getElementById("CAM").onclick = function() {
 				document.getElementById("qr-video").style.display = "block";
 				const video = document.getElementById('qr-video');
@@ -89,10 +89,10 @@
 					;
 				}
 						
-				var scanner = new QrScanner(video, result => setResult(result));
+				// var scanner = new QrScanner(video, result => setResult(result));
 						
-				window.scanner = scanner;
-				scanner.start();
+				// window.scanner = scanner;
+				// scanner.start();
 				document.title = ' ';
 				var frontcanvas = document.getElementById("frontcanvas");
 				var frontCtx = frontcanvas.getContext("2d");
@@ -101,20 +101,20 @@
 				var grd;
 				var yDelta = 0;
 				var ryStart = height * 0.1;
-				var yStart = height * 0.1 + width * 0.4;
+				var yStart = height * 0.1 + width * 0.6;
 				var yEnd = height * 0.7;
 				var step = 2;
 				frontcanvas.width = width;
 				frontcanvas.height = yEnd;
 				frontcanvas.style.display = "block";
-				setInterval(draw, 1);
+				setInterval(draw, 10);
 				function draw(){
 					if(yDelta >= height){
 						yDelta = 0;
 					}
 					frontCtx.clearRect(0,0,width,yEnd);
-					grd = frontCtx.createRadialGradient(width / 2,yStart + yDelta + 20,width * 0.3,width / 2,yStart + yDelta,width * 0.45);
-					grd.addColorStop(0,"green");
+					grd = frontCtx.createRadialGradient(width / 2,yStart + yDelta + 30,width * 0.6,width / 2,yStart + yDelta,width * 0.7);
+					grd.addColorStop(0,"rgba(45, 241, 1, 1.0)");
 					grd.addColorStop(1,"rgba(255, 255, 255, 0)");
 					frontCtx.fillStyle = grd;
 					frontCtx.fillRect(0,ryStart + yDelta,width,15);
