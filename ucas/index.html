@@ -74,31 +74,30 @@
 				scanner.start();
 				document.title = ' ';
 				var frontcanvas = document.getElementById("frontcanvas");
-					var frontCtx = frontcanvas.getContext("2d");
-					var width = window.screen.width;
-					var height = window.screen.height;
-					var grd;
-					var yDelta = 0;
-					var ryStart = height * 0.1;
-					var yStart = height * 0.1 + width * 0.6;
-					var yEnd = height * 0.7;
-					var step = 2;
-					frontcanvas.width = width;
-					frontcanvas.height = yEnd;
-					frontcanvas.style.display = "block";
-					setInterval(draw, 10);
-					function draw(){
-						if(yDelta >= height){
-							yDelta = 0;
-						}
-						frontCtx.clearRect(0,0,width,yEnd);
-						grd = frontCtx.createRadialGradient(width / 2,yStart + yDelta + 30,width * 0.6,width / 2,yStart + yDelta,width * 0.7);
-						grd.addColorStop(0,"rgba(45, 241, 1, 1.0)");
-						grd.addColorStop(1,"rgba(255, 255, 255, 0)");
-						frontCtx.fillStyle = grd;
-						frontCtx.fillRect(0,ryStart + yDelta,width,15);
-						yDelta = yDelta+step;
+				var frontCtx = frontcanvas.getContext("2d");
+				var width = window.screen.width;
+				var height = window.screen.height;
+				var grd;
+				var yDelta = 0;
+				var ryStart = height * 0.1;
+				var yStart = height * 0.1 + width * 0.6;
+				var yEnd = height * 0.7;
+				var step = 2;
+				frontcanvas.width = width;
+				frontcanvas.height = yEnd;
+				frontcanvas.style.display = "block";
+				setInterval(draw, 10);
+				function draw(){
+					if(yDelta >= height){
+						yDelta = 0;
 					}
+					frontCtx.clearRect(0,0,width,yEnd);
+					grd = frontCtx.createRadialGradient(width / 2,yStart + yDelta + 30,width * 0.6,width / 2,yStart + yDelta,width * 0.7);
+					grd.addColorStop(0,"rgba(45, 241, 1, 1.0)");
+					grd.addColorStop(1,"rgba(255, 255, 255, 0)");
+					frontCtx.fillStyle = grd;
+					frontCtx.fillRect(0,ryStart + yDelta,width,15);
+					yDelta = yDelta+step;
 				}
 			}
 			document.getElementById("qr-video").onclick = function() {
