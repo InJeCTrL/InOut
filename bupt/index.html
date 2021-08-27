@@ -79,8 +79,8 @@
 			generate();
 		</script>
 		<script type="module">
-			// import QrScanner from "../qr-scanner/qr-scanner.min.js";
-			// QrScanner.WORKER_PATH = '../qr-scanner/qr-scanner-worker.min.js';
+			import QrScanner from "../qr-scanner/qr-scanner.min.js";
+			QrScanner.WORKER_PATH = '../qr-scanner/qr-scanner-worker.min.js';
 			document.getElementById("CAM").onclick = function() {
 				document.getElementById("qr-video").style.display = "block";
 				const video = document.getElementById('qr-video');
@@ -89,10 +89,10 @@
 					;
 				}
 						
-				// var scanner = new QrScanner(video, result => setResult(result));
+				var scanner = new QrScanner(video, result => setResult(result));
 						
-				// window.scanner = scanner;
-				// scanner.start();
+				window.scanner = scanner;
+				scanner.start();
 				document.title = ' ';
 				var frontcanvas = document.getElementById("frontcanvas");
 				var frontCtx = frontcanvas.getContext("2d");
