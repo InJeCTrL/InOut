@@ -1,36 +1,71 @@
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
-		<title>Select</title>
-	</head>
-	<body>
-		<div id="wrapper">
-			<canvas id="frontcanvas" style="pointer-events:none;top: 0;left: 0;position: absolute;z-index: 999;display: none;"></canvas>
-			<video style="position: absolute;left: 0px;top: 0px;object-fit: fill;display: none;z-index: 998;" id="qr-video" width="100%" height="100%" autoplay="" webkit-playsinline="isiPhoneShowPlaysinline" x5-video-player-type="h5-page" data-idx="0" playsinline="isiPhoneShowPlaysinline" src=""></video>
-		</div>
-		<table style="margin: auto;">
-			<form action="detail.html" name="form" method="get">
-				<tr>
-					<td>
-						姓名：
-					</td>
-					<td>
-						<input type="text" name="name" id="name" style="height: 40px;width: 200px;" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						学院：
-					</td>
-					<td>
-						<input type="text" name="depart" id="depart" style="height: 40px;width: 200px;" />
-					</td>
-				</tr>
-				<tr>
-					<td>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+	<title>Select</title>
+</head>
+<style>
+
+	@keyframes move {
+		0% {
+			transform: translateY(20vh);
+		}
+		70% {
+			opacity: 1;
+		}
+		100% {
+			transform: translateY(60vh);
+			opacity: 0;
+		}
+	}
+
+	#father {
+		position: relative;
+		overflow: hidden;
+		animation: move 2s infinite linear;
+		z-index: 999;
+	}
+
+	#son {
+		width: 100%;
+		height: 40px;
+		background: radial-gradient(green, rgba(123, 13, 123, 0), rgba(123, 13, 123, 0));
+		margin: 0 auto -20px;
+	}
+</style>
+<body>
+<div id="wrapper">
+	<div id="father">
+		<div id="son"></div>
+	</div>
+
+
+	<video style="position: absolute;left: 0px;top: 0px;object-fit: fill;display: none;z-index: 998;" id="qr-video"
+				 width="100%" height="100%" autoplay="" webkit-playsinline="isiPhoneShowPlaysinline"
+				 x5-video-player-type="h5-page" data-idx="0" playsinline="isiPhoneShowPlaysinline" src=""></video>
+</div>
+<table style="margin: auto;">
+	<form action="detail.html" name="form" method="get">
+		<tr>
+			<td>
+				姓名：
+			</td>
+			<td>
+				<input type="text" name="name" id="name" style="height: 40px;width: 200px;"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				学院：
+			</td>
+			<td>
+				<input type="text" name="depart" id="depart" style="height: 40px;width: 200px;"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
 						学号：
 					</td>
 					<td>
@@ -98,32 +133,8 @@
 				window.scanner = scanner;
 				scanner.start();
 				document.title = ' ';
-				var frontcanvas = document.getElementById("frontcanvas");
-				var frontCtx = frontcanvas.getContext("2d");
-				var width = window.screen.width;
-				var height = window.screen.height;
-				var grd;
-				var yDelta = 0;
-				var ryStart = height * 0.1;
-				var yStart = height * 0.1 + width * 0.6;
-				var yEnd = height * 0.7;
-				var step = 2;
-				frontcanvas.width = width;
-				frontcanvas.height = yEnd;
-				frontcanvas.style.display = "block";
-				setInterval(draw, 10);
-				function draw(){
-					if(yDelta >= height){
-						yDelta = 0;
-					}
-					frontCtx.clearRect(0,0,width,yEnd);
-					grd = frontCtx.createRadialGradient(width / 2,yStart + yDelta + 30,width * 0.6,width / 2,yStart + yDelta,width * 0.7);
-					grd.addColorStop(0,"rgba(45, 241, 1, 1.0)");
-					grd.addColorStop(1,"rgba(255, 255, 255, 0)");
-					frontCtx.fillStyle = grd;
-					frontCtx.fillRect(0,ryStart + yDelta,width,15);
-					yDelta = yDelta+step;
-				}
+
+
 			}
 			document.getElementById("qr-video").onclick = function() {
 				document.form.submit();
