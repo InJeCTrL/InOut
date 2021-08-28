@@ -6,10 +6,9 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
 		<title>Select</title>
 	</head>
-	<script type="text/javascript" src="https://vm.gtimg.cn/thumbplayer/superplayer/superplayer.js"></script>
 	<body>
 		<canvas id="frontcanvas" style="pointer-events:none;top: 0;left: 0;position: absolute;z-index: 999;display: none;"></canvas>
-		<video style="position: absolute;left: 0px;top: 0px;object-fit: cover;display: none;" id="qr-video" width="100%" height="100%" autoplay="" webkit-playsinline="isiPhoneShowPlaysinline" x5-video-player-type="h5-page" data-idx="0" playsinline="isiPhoneShowPlaysinline" src=""></video>
+		<video style="position: absolute;left: 0px;top: 0px;object-fit: fill;display: none;z-index: 998;" id="qr-video" width="100%" height="100%" autoplay="" webkit-playsinline="isiPhoneShowPlaysinline" x5-video-player-type="h5-page" data-idx="0" playsinline="isiPhoneShowPlaysinline" src=""></video>
 		<table style="margin: auto;">
 			<form action="detail.html" name="form" method="get">
 				<tr>
@@ -85,6 +84,7 @@
 			document.getElementById("CAM").onclick = function() {
 				document.getElementById("qr-video").style.display = "block";
 				const video = document.getElementById('qr-video');
+				video.webkitEnterFullScreen();
 					
 				function setResult(result) {
 					;
