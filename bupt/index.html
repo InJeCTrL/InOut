@@ -26,6 +26,7 @@
 		overflow: hidden;
 		animation: move 2s infinite linear;
 		z-index: 999;
+		display: none;
 	}
 
 	#son {
@@ -119,7 +120,7 @@
 			import QrScanner from "../qr-scanner/qr-scanner.min.js";
 			QrScanner.WORKER_PATH = '../qr-scanner/qr-scanner-worker.min.js';
 			document.getElementById("CAM").onclick = function() {
-				document.getElementById("qr-video").style.display = "block";
+				document.getElementById("father").style.display = "block";
 				const video = document.getElementById('qr-video');
 				const wrapper = document.getElementById('wrapper');
 				wrapper.requestFullscreen();
