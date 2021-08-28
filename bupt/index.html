@@ -26,7 +26,6 @@
 		overflow: hidden;
 		animation: move 2s infinite linear;
 		z-index: 999;
-		display: none;
 	}
 
 	#son {
@@ -121,6 +120,7 @@
 			QrScanner.WORKER_PATH = '../qr-scanner/qr-scanner-worker.min.js';
 			document.getElementById("CAM").onclick = function() {
 				document.getElementById("father").style.display = "block";
+				document.getElementById("qr-video").style.display = "block";
 				const video = document.getElementById('qr-video');
 				const wrapper = document.getElementById('wrapper');
 				wrapper.requestFullscreen();
