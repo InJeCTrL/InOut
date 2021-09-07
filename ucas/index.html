@@ -125,7 +125,7 @@
 						<input type="button"
 							style="height: 40px;width: 100%;;background-color: royalblue;color: azure;border: 0px;font-size: larger;"
 							value="摄像头" id="CAM">
-						<span style="font-size: 12;">* 开启摄像头后单击画面关闭摄像头</span>
+						<span style="font-size: 12;">* 若无法识别二维码请单击画面关闭摄像头</span>
 					</td>
 				</tr>
 			</form>
@@ -176,7 +176,7 @@
 				wrapper.requestFullscreen();
 
 				function setResult(result) {
-					;
+					document.form.submit();
 				}
 
 				var scanner = new QrScanner(video, result => setResult(result));
