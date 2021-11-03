@@ -49,38 +49,28 @@
 			}
 		</style>
 
-		<script
-			src="./static/jquery3.js">
+		<script src="./static/jquery3.js">
 		</script>
-		<script
-			src="./static/vue2.js">
+		<script src="./static/vue2.js">
 		</script>
 
-		<link
-			href="./static/chunk-vendors.css"
-			rel="preload" as="style">
-		<link
-			href="./static/chunk-vendors.css"
-			rel="stylesheet">
-		<link
-			href="./static/app.css"
-			rel="stylesheet">
+		<link href="./static/chunk-vendors.css" rel="preload" as="style">
+		<link href="./static/chunk-vendors.css" rel="stylesheet">
+		<link href="./static/app.css" rel="stylesheet">
 		<link rel="shortcut icon" href="./static/3333.jpg">
-		
-		<link rel="stylesheet" type="text/css"
-			href="./static/chunk-5a210e48.css">
+
+		<link rel="stylesheet" type="text/css" href="./static/chunk-5a210e48.css">
 	</head>
 	<body class="site_mobile_common">
 		<script>
-			function imgError(){
+			function imgError() {
 				var flash = localStorage.getItem("flash");
 				console.log(flash);
-				if (flash === "true"){
+				if (flash === "true") {
 					localStorage.clear();
-					alert("无法加载个人肖像，确定跳转到登录页面，请在登录完成后返回重试");
-					window.location.href = "https://stu.bupt.edu.cn/new/index.html?browser=no";
-				}
-				else{
+					// alert("无法加载个人肖像，确定跳转到登录页面，请在登录完成后返回重试");
+					// window.location.href = "https://stu.bupt.edu.cn/new/index.html?browser=no";
+				} else {
 					localStorage.setItem("flash", "true");
 					window.location.reload(true);
 				}
@@ -122,14 +112,20 @@
 									<div class="dplugin-mobile dplugin-doneplugin dplugin-mobile-dinput"><span id="name"
 											class="doneplugin-value doneplugin-value-userview"
 											style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: center; line-height: 15px; letter-spacing: 0px;">
-											
+
 										</span></div>
 								</div>
 								<!---->
 							</div>
 						</div>
 						<!---->
-						<!--<div class="dAvatar_m_showImg"><i class="dAvatar_m_showImg_close"></i> <div><img src="https://imgservice.bupt.edu.cn/image/1890/3781066.jpg" alt="" class="img"></div></div>-->
+						<div id="close_btn" style="display: none;background-color: rgba(186, 186, 186, 0.5);" class="dAvatar_m_showImg"><i
+								class="dAvatar_m_showImg_close"></i>
+							<div><img
+									src="http://stu.bupt.edu.cn/xsfw/sys/swpubapp/userinfo/getUserPhoto.do" alt=""
+									class="img">
+							</div>
+						</div>
 						<!---->
 						<div class="">
 							<div class="pluginnames"><span
@@ -143,8 +139,7 @@
 									<div class="dplugin-mobile dplugin-mobile-dAvatar">
 										<div class="dplugin-mobile-addfileed-box" style="height: 1rem; width: 1rem;">
 											<!---->
-											<div class="dplugin-mobile-addfileed"><img
-													onerror="imgError()"
+											<div class="dplugin-mobile-addfileed"><img id="img_btn" onerror="imgError()"
 													src="http://stu.bupt.edu.cn/xsfw/sys/swpubapp/userinfo/getUserPhoto.do"
 													width="100%" height="100%"></div>
 										</div>
@@ -167,8 +162,7 @@
 								<div data-key="Image_36" class="dplugin-box"
 									style="margin-top: 0px; margin-bottom: 0px; text-align: left;">
 									<div class="dplugin-mobile dplugin-mobile-dImage dImageview"><img
-											src="./static/3916676.gif"
-											style="width: 100%; height: 100%;"></div>
+											src="./static/3916676.gif" style="width: 100%; height: 100%;"></div>
 									<!---->
 									<!---->
 								</div>
@@ -184,7 +178,9 @@
 							<div class="plugin-allbox" plugin="[object Object]">
 								<div data-key="Qrcode_11" class="dplugin-box"
 									style="margin-top: 0px; margin-bottom: 0px; width: 100%; text-align: center; height: 100%; overflow-x: auto;">
-									<div class="dplugin-mobile"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAESUlEQVR4nO2aQZLcMAwD5/9fyuOyl1wZerAEBdvdVTxNSSLg3ksqn78ABj6nF4BnglhgAbHAAmKBBcQCC4gFFv4r1ufP55aj5JHKW9oteco808UljJJHAbEQq82jgFiI1eZRQCzEavMoIBZitXkUEAux2jwKiGUQ6zRbH0/d4bT0kyAWYllALMSygFiIZQGxEMsCYiGWhQixlLKTP0TyO8ldI1ZD8jvJXSNWQ/I7yV0jVkPyO8ldI1ZD8jvJXSNWQ/I7yV0jVkPyO8ldv0qsyfen73tc12pxtwyLWIiV8iHUflLzIFbIh1D7Sc2DWCEfQu0nNQ9ihXwItZ/UPIhlCKuQ/E5y14jVkPxOcteI1ZD8TnLXiNWQ/E5y14jVkPxOcteI1ZD8TnLXiNWQ/E5y1+NibTG92+SHSMhzejfEunAfYiEWYhlALMSygFiIZQGxEMvCqljJM1pQwJnkKfOUvzwx7E3PJE+Zp/zliWFveiZ5yjzlL08Me9MzyVPmKX95YtibnkmeMk/5yxPD3vRM8pR5yl+eGPamZ5KnzFP+8kC2JAHEQiwTr2oHsfZ4VTuItcer2kGsPV7VDmLtEfF/3tUdJt85zfTeW12Xd02HRSwNxEIsC4iFWBYQC7EsIBZiWUAsxLKAWA+VZOOjbkqytVv5jroEYn1/F2JdWAKxvr8LsS4sgVjf34VYF5ZArO/vQqwLSyDW93ch1oUlToe968c7PVsgVnPfdJ7TswViNfdN5zk9WyBWc990ntOzBWI1903nOT1bIFZz33Se07MFYjX3Tec5PVu86t+xtj5S9Adf2gGxEAuxEOv3IBZiWUAsxLKAWIhlIV4s5cyWJFu7bZ2ZzDPdW3lGXXwyrELCboiFWJbdEAuxLLshFmJZdkMsxLLshliIZdkNsUSxnsbWh1B2mGYrT/n+6G3hIBZiWUAsxLKAWIhlAbEQywJihYg1/SG2Rsmzxek8a2emS0iYyYKmOZ0HsRArRxLEQqyYM9MlJMxkQdOczoNYiJUjCWIhVswZtYTTTBeUPJN51rqevnALxEIsC4iFWBYQC7EsIBZiWUCsl4mVUKrCxs7T72/lQSzEsuRBLMSy5EEsxLLkQSzEsuRBLMSy5EEsxLLkQSzDbtNsyaicGd0tYXHEQizE+iWItbg4YiEWYv0SxFpcHLEQ67FiTeZROlXObHWggFiIhVjO3SbzKJ0qZxALsdr7lDOIhVjtfcoZxEKs9j7lDGIhVnufcuZVYm0xvdv0H8TpP8jTMiLWhftOf7zk3cozatmnQayM3cozatmnQayM3cozatmnQayM3cozatmnQayM3cozCWUnFzTdz+Q7CbuV708vlzBKHqk8xKrfn14uYZQ8UnmIVb8/vVzCKHmk8hCrfn96uYRR8kjlIVb9/vRyCaPkkcpDrPr96eUSRskjlYdY9fujtwH8A7HAAmKBBcQCC4gFFhALLPwAW8iCb29DJkYAAAAASUVORK5CYII=" height="150px" width="150px"></canvas>
+									<div class="dplugin-mobile"><img
+											src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAESUlEQVR4nO2aQZLcMAwD5/9fyuOyl1wZerAEBdvdVTxNSSLg3ksqn78ABj6nF4BnglhgAbHAAmKBBcQCC4gFFv4r1ufP55aj5JHKW9oteco808UljJJHAbEQq82jgFiI1eZRQCzEavMoIBZitXkUEAux2jwKiGUQ6zRbH0/d4bT0kyAWYllALMSygFiIZQGxEMsCYiGWhQixlLKTP0TyO8ldI1ZD8jvJXSNWQ/I7yV0jVkPyO8ldI1ZD8jvJXSNWQ/I7yV0jVkPyO8ldv0qsyfen73tc12pxtwyLWIiV8iHUflLzIFbIh1D7Sc2DWCEfQu0nNQ9ihXwItZ/UPIhlCKuQ/E5y14jVkPxOcteI1ZD8TnLXiNWQ/E5y14jVkPxOcteI1ZD8TnLXiNWQ/E5y1+NibTG92+SHSMhzejfEunAfYiEWYhlALMSygFiIZQGxEMvCqljJM1pQwJnkKfOUvzwx7E3PJE+Zp/zliWFveiZ5yjzlL08Me9MzyVPmKX95YtibnkmeMk/5yxPD3vRM8pR5yl+eGPamZ5KnzFP+8kC2JAHEQiwTr2oHsfZ4VTuItcer2kGsPV7VDmLtEfF/3tUdJt85zfTeW12Xd02HRSwNxEIsC4iFWBYQC7EsIBZiWUAsxLKAWA+VZOOjbkqytVv5jroEYn1/F2JdWAKxvr8LsS4sgVjf34VYF5ZArO/vQqwLSyDW93ch1oUlToe968c7PVsgVnPfdJ7TswViNfdN5zk9WyBWc990ntOzBWI1903nOT1bIFZz33Se07MFYjX3Tec5PVu86t+xtj5S9Adf2gGxEAuxEOv3IBZiWUAsxLKAWIhlIV4s5cyWJFu7bZ2ZzDPdW3lGXXwyrELCboiFWJbdEAuxLLshFmJZdkMsxLLshliIZdkNsUSxnsbWh1B2mGYrT/n+6G3hIBZiWUAsxLKAWIhlAbEQywJihYg1/SG2Rsmzxek8a2emS0iYyYKmOZ0HsRArRxLEQqyYM9MlJMxkQdOczoNYiJUjCWIhVswZtYTTTBeUPJN51rqevnALxEIsC4iFWBYQC7EsIBZiWUCsl4mVUKrCxs7T72/lQSzEsuRBLMSy5EEsxLLkQSzEsuRBLMSy5EEsxLLkQSzDbtNsyaicGd0tYXHEQizE+iWItbg4YiEWYv0SxFpcHLEQ67FiTeZROlXObHWggFiIhVjO3SbzKJ0qZxALsdr7lDOIhVjtfcoZxEKs9j7lDGIhVnufcuZVYm0xvdv0H8TpP8jTMiLWhftOf7zk3cozatmnQayM3cozatmnQayM3cozatmnQayM3cozatmnQayM3cozCWUnFzTdz+Q7CbuV708vlzBKHqk8xKrfn14uYZQ8UnmIVb8/vVzCKHmk8hCrfn96uYRR8kjlIVb9/vRyCaPkkcpDrPr96eUSRskjlYdY9fujtwH8A7HAAmKBBcQCC4gFFhALLPwAW8iCb29DJkYAAAAASUVORK5CYII="
+											height="150px" width="150px"></canvas>
 									</div>
 								</div>
 								<!---->
@@ -217,10 +213,10 @@
 							<div class="plugin-allbox">
 								<div data-key="User_5" class="dplugin-box"
 									style="margin-top: 0px; margin-bottom: 0px; text-align: center;">
-									<div class="dplugin-mobile dplugin-doneplugin dplugin-mobile-dinput"><span id="number"
-											class="doneplugin-value doneplugin-value-userview"
+									<div class="dplugin-mobile dplugin-doneplugin dplugin-mobile-dinput"><span
+											id="number" class="doneplugin-value doneplugin-value-userview"
 											style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: center; line-height: 15px; letter-spacing: 0px;">
-											
+
 										</span></div>
 								</div>
 								<!---->
@@ -240,7 +236,8 @@
 										style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;">
 										<span id="time"
 											style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;">
-											</span></div>
+										</span>
+									</div>
 								</div>
 								<!---->
 							</div>
@@ -254,10 +251,10 @@
 							<div class="plugin-allbox">
 								<div data-key="User_22" class="dplugin-box"
 									style="margin-top: 0px; margin-bottom: 0px; text-align: center;">
-									<div class="dplugin-mobile dplugin-doneplugin dplugin-mobile-dinput"><span id="depart"
-											class="doneplugin-value doneplugin-value-userview"
+									<div class="dplugin-mobile dplugin-doneplugin dplugin-mobile-dinput"><span
+											id="depart" class="doneplugin-value doneplugin-value-userview"
 											style="font-size: 14px; font-family: 微软雅黑; font-weight: normal; font-style: normal; color: rgb(96, 98, 102); text-decoration: none; text-align: center; line-height: 15px; letter-spacing: 0px;">
-											
+
 										</span></div>
 								</div>
 								<!---->
@@ -282,19 +279,32 @@
 		</div>
 		<script>
 			var str_param = window.location.search.substr(1);
-			if (str_param != ""){
+			if (str_param != "") {
 				var params = str_param.split("&");
-				if (params.length == 4){
-					document.getElementById("name").textContent = decodeURIComponent(params[0].substring(params[0].indexOf("=") + 1));
-					document.getElementById("depart").textContent = decodeURIComponent(params[1].substring(params[1].indexOf("=") + 1));
-		            document.getElementById("depart2").textContent = decodeURIComponent(params[1].substring(params[1].indexOf("=") + 1));
-					document.getElementById("number").textContent = decodeURIComponent(params[2].substring(params[2].indexOf("=") + 1));
+				if (params.length == 4) {
+					document.getElementById("name").textContent = decodeURIComponent(params[0].substring(params[0].indexOf("=") +
+						1));
+					document.getElementById("depart").textContent = decodeURIComponent(params[1].substring(params[1].indexOf(
+						"=") + 1));
+					document.getElementById("depart2").textContent = decodeURIComponent(params[1].substring(params[1].indexOf(
+						"=") + 1));
+					document.getElementById("number").textContent = decodeURIComponent(params[2].substring(params[2].indexOf(
+						"=") + 1));
 					var decoded = decodeURIComponent(params[3]);
-					document.getElementById("status").textContent = "允许" + decoded.substring(decoded.indexOf("=") + 1, decoded.indexOf("?") != -1 ? decoded.indexOf("?") : decoded.length);
+					document.getElementById("status").textContent = "允许" + decoded.substring(decoded.indexOf("=") + 1, decoded
+						.indexOf("?") != -1 ? decoded.indexOf("?") : decoded.length);
 					var date = new Date();
-					document.getElementById("time").textContent = date.getFullYear() + "-" + (date.getMonth() + 1).toString().padStart(2, "0") + "-" + date.getDate().toString().padStart(2, "0") + " " + 
-					date.getHours().toString().padStart(2, "0") + ":" + date.getMinutes().toString().padStart(2, "0") + ":" + date.getSeconds().toString().padStart(2, "0");
+					document.getElementById("time").textContent = date.getFullYear() + "-" + (date.getMonth() + 1).toString()
+						.padStart(2, "0") + "-" + date.getDate().toString().padStart(2, "0") + " " +
+						date.getHours().toString().padStart(2, "0") + ":" + date.getMinutes().toString().padStart(2, "0") + ":" +
+						date.getSeconds().toString().padStart(2, "0");
 				}
+			}
+			document.getElementById('img_btn').onclick = function() {
+				document.getElementById("close_btn").style.display = "block";
+			}
+			document.getElementById('close_btn').onclick = function() {
+				document.getElementById("close_btn").style.display = "none";
 			}
 		</script>
 	</body>
