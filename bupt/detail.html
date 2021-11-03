@@ -73,8 +73,16 @@
 	<body class="site_mobile_common">
 		<script>
 			function imgError(){
-				alert("无法加载个人肖像，确定跳转到登录页面，请在登录完成后返回重试");
-				window.location.href = "https://stu.bupt.edu.cn/new/index.html?browser=no";
+				var flash = localStorage.getItem("flash");
+				if (flash === true){
+					localStorage.clear();
+					alert("无法加载个人肖像，确定跳转到登录页面，请在登录完成后返回重试");
+					window.location.href = "https://stu.bupt.edu.cn/new/index.html?browser=no";
+				}
+				else{
+					localStorage.setItem("flash", true);
+					window.location.reload(true);
+				}
 			}
 		</script>
 		<div id="wxform">
