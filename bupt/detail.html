@@ -74,13 +74,14 @@
 		<script>
 			function imgError(){
 				var flash = localStorage.getItem("flash");
-				if (flash === true){
+				console.log(flash);
+				if (flash === "true"){
 					localStorage.clear();
 					alert("无法加载个人肖像，确定跳转到登录页面，请在登录完成后返回重试");
 					window.location.href = "https://stu.bupt.edu.cn/new/index.html?browser=no";
 				}
 				else{
-					localStorage.setItem("flash", true);
+					localStorage.setItem("flash", "true");
 					window.location.reload(true);
 				}
 			}
@@ -128,6 +129,7 @@
 							</div>
 						</div>
 						<!---->
+						<div class="dAvatar_m_showImg"><i class="dAvatar_m_showImg_close"></i> <div><img src="https://imgservice.bupt.edu.cn/image/1890/3781066.jpg" alt="" class="img"></div></div>
 						<!---->
 						<div class="">
 							<div class="pluginnames"><span
