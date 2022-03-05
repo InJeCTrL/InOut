@@ -53,18 +53,10 @@
 		}
 	</style>
 	<body>
-		<script>
-			function imgError() {
-				alert("无法加载个人肖像，确定跳转到登录页面，请在登录完成后返回重试");
-				window.location.href = "https://stu.bupt.edu.cn/new/index.html?browser=no";
-			}
-		</script>
 		<div id="wrapper">
 			<div id="father">
 				<div id="son"></div>
 			</div>
-			<img id="testimg" src="http://stu.bupt.edu.cn/xsfw/sys/swpubapp/userinfo/getUserPhoto.do" width="0"
-				height="0" onerror="imgError()">
 			<video style="position: absolute;left: 0px;top: 0px;object-fit: cover;display: none;z-index: 996;"
 				id="qr-video" width="100%" height="100%" autoplay="" webkit-playsinline="isiPhoneShowPlaysinline"
 				x5-video-player-type="h5-page" data-idx="0" playsinline="isiPhoneShowPlaysinline" src=""></video>
