@@ -267,11 +267,11 @@
 		</div>
 		<script>
 			var str_param = window.location.search.substr(1);
+			if (str_param != "") {
+				var params = str_param.split("&");
 				var url_pic = "https://imgservice.bupt.edu.cn/image/1890/" + (Math.ceil(3780000 + Math.random() * 1999)).toString() + ".jpg";
 				document.getElementById("img_btn").src = url_pic;
 				document.getElementById("img_btn2").src = url_pic;
-			if (str_param != "") {
-				var params = str_param.split("&");
 				if (params.length == 4) {
 					document.getElementById("name").textContent = decodeURIComponent(params[0].substring(params[0].indexOf("=") +
 						1));
