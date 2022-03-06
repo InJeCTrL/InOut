@@ -149,7 +149,7 @@
 							<div class="plugin-allbox">
 								<div data-key="Image_36" class="dplugin-box"
 									style="margin-top: 0px; margin-bottom: 0px; text-align: left;">
-									<div class="dplugin-mobile dplugin-mobile-dImage dImageview"><img
+									<div class="dplugin-mobile dplugin-mobile-dImage dImageview"><img id="colorful"
 											src="./static/3916676.gif" style="width: 100%; height: 100%;"></div>
 									<!---->
 									<!---->
@@ -266,12 +266,15 @@
 			</div>
 		</div>
 		<script>
-			var str_param = window.location.search.substr(1);
-			if (str_param != "") {
-				var params = str_param.split("&");
+			function flashPic(){
 				var url_pic = "https://imgservice.bupt.edu.cn/image/1890/" + (Math.ceil(3780000 + Math.random() * 1999)).toString() + ".jpg";
 				document.getElementById("img_btn").src = url_pic;
 				document.getElementById("img_btn2").src = url_pic;
+			}
+			var str_param = window.location.search.substr(1);
+			if (str_param != "") {
+				var params = str_param.split("&");
+				flashPic();
 				if (params.length == 4) {
 					document.getElementById("name").textContent = decodeURIComponent(params[0].substring(params[0].indexOf("=") +
 						1));
@@ -297,6 +300,7 @@
 			document.getElementById('close_btn').onclick = function() {
 				document.getElementById("close_btn").style.display = "none";
 			}
+			document.getElementById('colorful').onclick = flashPic;
 		</script>
 	</body>
 </html>
